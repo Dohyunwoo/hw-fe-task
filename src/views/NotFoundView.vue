@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="uk-text-center">
     <div class="uk-margin-bottom">
-      <img src="../assets/404page.jpg" width="600" height="600" uk-img>
+      <span uk-spinner="ratio: 4.5"></span>
     </div>
     <div>
-      <router-link class="uk-button uk-button-secondary uk-button-large uk-width-1-1" to="/register">홈으로 이동</router-link>
+      <router-link class="uk-button uk-button-secondary uk-button-large uk-width-1-1" to="/register">잘못된 페이지 홈으로 이동</router-link>
     </div>
   </div>
 </template>
