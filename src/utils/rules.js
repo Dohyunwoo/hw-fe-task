@@ -58,8 +58,8 @@ const rules = reactive({
   passwordCheck() { //해당 파라미터는 비밀번호 확인으로 받는 데이터
     const regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/g;
     !!regExp.test(user.form.password) ? rules.checkResult.password = true : rules.checkResult.password = false;
-    ((user.form.password == user.form.pwdcheck) && !!user.form.pwdcheck) ? rules.checkResult.pwdCheck = true : rules.checkResult.pwdCheck = false;
-    return (rules.checkResult.password && user.form.pwdcheck)
+    ((user.form.password === user.form.pwdcheck) && !!user.form.pwdcheck) ? rules.checkResult.pwdCheck = true : rules.checkResult.pwdCheck = false;
+    return (rules.checkResult.password && rules.checkResult.pwdCheck)
   },
   cardNumCheck(param) { // 해당 파라미터는 4자리씩 받은 카드 번호를 문자열 형태로 합하여 16자리 숫자의 데이터로 받음
     let paramToArr = [...param];
@@ -98,6 +98,14 @@ const rules = reactive({
       numbers = numbers.slice(0, 11); // 11자리까지만 사용
       return numbers.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
     }
+  },
+  previusStep() {
+    user.form.name = '',
+    user.form.phone = '',
+    user.form.address = '',
+    user.form.addressDetail = '',
+    user.form.cardNumber = '' 
+    step.value--;
   }
 })
 

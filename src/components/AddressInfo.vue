@@ -37,10 +37,10 @@
     <div id="map" style="width:100%;"></div>
     <div class="uk-flex uk-flex-between button-area uk-margin-large-top">
       <div>
-        <router-link class="uk-button uk-button-secondary uk-button-large">이전</router-link>
+        <button class="uk-button uk-button-secondary uk-button-large" type="button" @click="rules.previusStep">이전</button>
       </div>
       <div>
-        <button class="uk-button uk-button-default uk-button-large">다음</button>
+        <button class="uk-button uk-button-default uk-button-large" type="submit">다음</button>
       </div>
     </div>
   </form>
